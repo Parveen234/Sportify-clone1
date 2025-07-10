@@ -6,6 +6,7 @@ import Sidebar from '../components/Layout/Sidebar';
 import TopBar from '../components/Layout/TopBar';
 import SongList from '../components/Songs/SongList';
 import MusicPlayer from '../components/Player/MusicPlayer';
+import NowPlayingSidebar from '../components/Layout/NowPlayingSidebar';
 import { Song } from '../types';
 
 // Sample songs data
@@ -161,7 +162,7 @@ const Dashboard: React.FC = () => {
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
         
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col min-w-0">
           <TopBar />
           
           <main className="flex-1 overflow-y-auto p-6 relative">
@@ -187,6 +188,9 @@ const Dashboard: React.FC = () => {
             </div>
           </main>
         </div>
+        
+        {/* Now Playing Sidebar - only show when song is playing */}
+        {currentSong && <NowPlayingSidebar />}
       </div>
 
       <div className="relative z-20">
