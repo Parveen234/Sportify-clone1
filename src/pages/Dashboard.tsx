@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Plus } from 'lucide-react';
+import { RootState } from '../store';
 import { setSongs, setLoading } from '../store/slices/songsSlice';
 import Sidebar from '../components/Layout/Sidebar';
 import TopBar from '../components/Layout/TopBar';
@@ -135,6 +136,7 @@ const sampleSongs: Song[] = [
 
 const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
+  const { currentSong } = useSelector((state: RootState) => state.player);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   useEffect(() => {
@@ -147,29 +149,48 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col">
+      {/* Dynamic Background */}
+      {currentSong && (
+        <div 
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url(${currentSong.thumbnailUrl})`,
+            filter: 'blur(50px) brightness(0.3)',
+            transform: 'scale(1.1)',
+          }}
+        />
+      )}
+      
       <div className="flex flex-1 overflow-hidden">
         <Sidebar />
         
         <div className="flex-1 flex flex-col">
           <TopBar />
           
-          <main className="flex-1 overflow-y-auto p-6">
+          <main className="flex-1 overflow-y-auto p-6 relative">
+            {/* Gradient overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+            
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h1 className="text-4xl font-bold text-white mb-2">Good evening</h1>
-                  <p className="text-gray-400">Discover and enjoy your favorite music</p>
+                  <h1 className="text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                    {currentSong ? `Now Playing` : 'Good evening'}
+                  </h1>
+                  <p className="text-gray-300 drop-shadow-md">
+                    {currentSong ? `${currentSong.title} by ${currentSong.artist}` : 'Discover and enjoy your favorite music'}
+                  </p>
                 </div>
                 <button
                   onClick={() => setIsUploadModalOpen(true)}
-                  className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full flex items-center space-x-2 transition-colors"
+                  className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full flex items-center space-x-2 transition-colors shadow-lg backdrop-blur-sm"
                 >
                   <Plus size={20} />
                   <span>Upload Song</span>
                 </button>
               </div>
 
-              <div className="bg-gray-900 bg-opacity-50 backdrop-blur-sm rounded-lg p-6">
+              <div className="bg-gray-900 bg-opacity-60 backdrop-blur-md rounded-lg p-6 shadow-2xl border border-gray-700/50">
                 <h2 className="text-2xl font-bold text-white mb-6">Recently Added</h2>
                 <SongList />
               </div>
@@ -178,7 +199,9 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      <MusicPlayer />
+      <div className="relative z-20">
+        <MusicPlayer />
+      </div>
       
       <UploadModal 
         isOpen={isUploadModalOpen}

@@ -118,7 +118,7 @@ const MusicPlayer: React.FC = () => {
   }
 
   return (
-    <div className="h-24 bg-gray-900 border-t border-gray-800 flex items-center justify-between px-4">
+    <div className="h-24 bg-gray-900 bg-opacity-95 backdrop-blur-md border-t border-gray-700/50 flex items-center justify-between px-4 shadow-2xl">
       <audio ref={audioRef} />
       
       {/* Song Info */}
