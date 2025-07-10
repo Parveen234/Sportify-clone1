@@ -8,7 +8,8 @@ import {
   Volume2, 
   VolumeX,
   Shuffle,
-  Repeat
+  Repeat,
+  Maximize2
 } from 'lucide-react';
 import { RootState } from '../../store';
 import { 
@@ -20,6 +21,7 @@ import {
   setDuration,
   setIsPlaying
 } from '../../store/slices/playerSlice';
+import FullscreenPlayer from './FullscreenPlayer';
 
 const MusicPlayer: React.FC = () => {
   const dispatch = useDispatch();
@@ -28,6 +30,7 @@ const MusicPlayer: React.FC = () => {
   );
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -123,13 +126,26 @@ const MusicPlayer: React.FC = () => {
       
       {/* Song Info */}
       <div className="flex items-center space-x-4 w-1/4">
-        <img 
-          src={currentSong.thumbnailUrl} 
-          alt={currentSong.title}
-          className="w-14 h-14 rounded object-cover"
-        />
+        <button
+          onClick={() => setIsFullscreen(true)}
+          className="group relative"
+        >
+          <img 
+            src={currentSong.thumbnailUrl} 
+            alt={currentSong.title}
+            className="w-14 h-14 rounded object-cover transition-transform group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 rounded flex items-center justify-center transition-all">
+            <Maximize2 size={16} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
+        </button>
         <div className="min-w-0">
-          <h4 className="text-white font-medium truncate">{currentSong.title}</h4>
+          <button
+            onClick={() => setIsFullscreen(true)}
+            className="text-left"
+          >
+            <h4 className="text-white font-medium truncate hover:underline">{currentSong.title}</h4>
+          </button>
           <p className="text-gray-400 text-sm truncate">{currentSong.artist}</p>
         </div>
       </div>
@@ -197,6 +213,11 @@ const MusicPlayer: React.FC = () => {
           className="w-24 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
         />
       </div>
+      
+      <FullscreenPlayer 
+        isOpen={isFullscreen}
+        onClose={() => setIsFullscreen(false)}
+      />
     </div>
   );
 };

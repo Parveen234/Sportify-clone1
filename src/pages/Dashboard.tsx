@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Plus } from 'lucide-react';
 import { RootState } from '../store';
 import { setSongs, setLoading } from '../store/slices/songsSlice';
 import Sidebar from '../components/Layout/Sidebar';
 import TopBar from '../components/Layout/TopBar';
 import SongList from '../components/Songs/SongList';
-import UploadModal from '../components/Upload/UploadModal';
 import MusicPlayer from '../components/Player/MusicPlayer';
 import { Song } from '../types';
 
@@ -137,7 +135,6 @@ const sampleSongs: Song[] = [
 const Dashboard: React.FC = () => {
   const dispatch = useDispatch();
   const { currentSong } = useSelector((state: RootState) => state.player);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   useEffect(() => {
     // Load sample songs on component mount
@@ -181,13 +178,6 @@ const Dashboard: React.FC = () => {
                     {currentSong ? `${currentSong.title} by ${currentSong.artist}` : 'Discover and enjoy your favorite music'}
                   </p>
                 </div>
-                <button
-                  onClick={() => setIsUploadModalOpen(true)}
-                  className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-full flex items-center space-x-2 transition-colors shadow-lg backdrop-blur-sm"
-                >
-                  <Plus size={20} />
-                  <span>Upload Song</span>
-                </button>
               </div>
 
               <div className="bg-gray-900 bg-opacity-60 backdrop-blur-md rounded-lg p-6 shadow-2xl border border-gray-700/50">
@@ -202,11 +192,6 @@ const Dashboard: React.FC = () => {
       <div className="relative z-20">
         <MusicPlayer />
       </div>
-      
-      <UploadModal 
-        isOpen={isUploadModalOpen}
-        onClose={() => setIsUploadModalOpen(false)}
-      />
     </div>
   );
 };
