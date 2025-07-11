@@ -6,7 +6,7 @@ export interface Song {
   audioUrl: string;
   thumbnailUrl: string;
   uploadedBy: string;
-  createdAt: Date;
+  createdAt: number;
 }
 
 export interface Playlist {
@@ -15,7 +15,7 @@ export interface Playlist {
   description?: string;
   songs: string[];
   createdBy: string;
-  createdAt: Date;
+  createdAt: number;
   thumbnailUrl?: string;
 }
 

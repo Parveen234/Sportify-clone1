@@ -19,7 +19,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '2',
@@ -29,7 +29,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '4',
@@ -49,7 +49,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '5',
@@ -59,7 +59,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1644888/pexels-photo-1644888.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '6',
@@ -69,7 +69,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '7',
@@ -79,7 +79,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '8',
@@ -89,7 +89,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '9',
@@ -99,7 +99,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '10',
@@ -109,7 +109,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '11',
@@ -119,7 +119,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '12',
@@ -129,7 +129,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '13',
@@ -139,7 +139,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1644888/pexels-photo-1644888.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '14',
@@ -149,7 +149,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
     id: '15',
@@ -159,7 +159,7 @@ const sampleSongs: Song[] = [
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3',
     thumbnailUrl: 'https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=300',
     uploadedBy: 'system',
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
 ];
 

@@ -50,7 +50,7 @@ export const uploadSong = async (
   
   return {
     ...songData,
-    createdAt: songData.createdAt.toDate(),
+    createdAt: songData.createdAt.toMillis(),
   };
 };
 
@@ -60,6 +60,6 @@ export const getSongs = async (): Promise<Song[]> => {
   
   return querySnapshot.docs.map(doc => ({
     ...doc.data(),
-    createdAt: doc.data().createdAt.toDate(),
+    createdAt: doc.data().createdAt.toMillis(),
   })) as Song[];
 };
