@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, Search, Library, Plus, Heart } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
-  // Sample playlists
+  // User playlists
   const samplePlaylists = [
     { id: '1', name: 'Meri Pasandida' },
     { id: '2', name: 'Romantic Hits' },
@@ -15,7 +15,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div className="w-64 bg-black bg-opacity-90 backdrop-blur-sm text-white h-full flex flex-col border-r border-gray-700/30">
-      {/* Logo */}
+      {/* App logo */}
       <div className="p-6">
         <div className="flex items-center space-x-2">
           <img src="/sportifyy.png" alt="Spotify" className="w-8 h-8" />
@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Navigation menu */}
       <nav className="px-6 space-y-4">
         <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
           <Home size={24} />
@@ -52,7 +52,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      {/* Playlists */}
+      {/* User playlists */}
       <div className="flex-1 px-6 mt-6 overflow-y-auto">
         <div className="space-y-2">
           {samplePlaylists.map((playlist) => (

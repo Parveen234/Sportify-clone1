@@ -8,7 +8,7 @@ const TopBar: React.FC = () => {
 
   return (
     <div className="h-16 bg-black bg-opacity-70 backdrop-blur-md flex items-center justify-between px-6 border-b border-gray-700/30">
-      {/* Navigation */}
+      {/* Navigation buttons */}
       <div className="flex items-center space-x-4">
         <button className="w-8 h-8 bg-black bg-opacity-80 rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-colors shadow-lg">
           <ChevronLeft size={20} />
@@ -17,7 +17,7 @@ const TopBar: React.FC = () => {
           <ChevronRight size={20} />
         </button>
         
-        {/* Currently Playing Indicator */}
+        {/* Current song info */}
         {currentSong && (
           <div className="flex items-center space-x-3 ml-6">
             <img 
@@ -33,7 +33,7 @@ const TopBar: React.FC = () => {
         )}
       </div>
 
-      {/* User Menu */}
+      {/* User profile */}
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2 bg-black bg-opacity-80 rounded-full px-4 py-2 shadow-lg">
           <User size={20} className="text-white" />

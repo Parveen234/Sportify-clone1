@@ -59,7 +59,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
 
   return (
     <div className="fixed inset-0 bg-black z-50 flex flex-col">
-      {/* Background Image */}
+      {/* Album art background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -68,10 +68,10 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
         }}
       />
       
-      {/* Gradient Overlay */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
       
-      {/* Header */}
+      {/* Top bar */}
       <div className="relative z-10 flex items-center justify-between p-6">
         <button
           onClick={onClose}
@@ -90,9 +90,9 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
         </button>
       </div>
 
-      {/* Main Content */}
+      {/* Player content */}
       <div className="flex-1 flex flex-col items-center justify-center px-8 relative z-10">
-        {/* Album Art */}
+        {/* Large album art */}
         <div className="mb-8">
           <img 
             src={currentSong.thumbnailUrl} 
@@ -101,7 +101,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
           />
         </div>
 
-        {/* Song Info */}
+        {/* Track information */}
         <div className="text-center mb-8 max-w-md">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 truncate">
             {currentSong.title}
@@ -109,7 +109,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
           <p className="text-xl text-gray-300 truncate">{currentSong.artist}</p>
         </div>
 
-        {/* Progress Bar */}
+        {/* Progress slider */}
         <div className="w-full max-w-md mb-8">
           <input
             type="range"
@@ -124,7 +124,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
           </div>
         </div>
 
-        {/* Controls */}
+        {/* Player controls */}
         <div className="flex items-center space-x-8 mb-8">
           <button className="text-gray-400 hover:text-white transition-colors">
             <Shuffle size={24} />
@@ -152,7 +152,7 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
           </button>
         </div>
 
-        {/* Secondary Controls */}
+        {/* Additional controls */}
         <div className="flex items-center space-x-6">
           <button className="text-gray-400 hover:text-green-400 transition-colors">
             <Heart size={20} />

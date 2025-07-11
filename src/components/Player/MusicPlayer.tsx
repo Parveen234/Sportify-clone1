@@ -124,7 +124,7 @@ const MusicPlayer: React.FC = () => {
     <div className="h-24 bg-gray-900 bg-opacity-95 backdrop-blur-md border-t border-gray-700/50 flex items-center justify-between px-4 shadow-2xl">
       <audio ref={audioRef} />
       
-      {/* Song Info */}
+      {/* Track info */}
       <div className="flex items-center space-x-4 w-1/4">
         <button
           onClick={() => setIsFullscreen(true)}
@@ -150,7 +150,7 @@ const MusicPlayer: React.FC = () => {
         </div>
       </div>
 
-      {/* Player Controls */}
+      {/* Playback controls */}
       <div className="flex flex-col items-center space-y-2 w-1/2">
         <div className="flex items-center space-x-4">
           <button className="text-gray-400 hover:text-white transition-colors">
@@ -179,7 +179,7 @@ const MusicPlayer: React.FC = () => {
           </button>
         </div>
 
-        {/* Progress Bar */}
+        {/* Seek bar */}
         <div className="flex items-center space-x-2 w-full">
           <span className="text-xs text-gray-400 w-10 text-right">
             {formatTime(currentTime)}
@@ -198,7 +198,7 @@ const MusicPlayer: React.FC = () => {
         </div>
       </div>
 
-      {/* Volume Control */}
+      {/* Volume controls */}
       <div className="flex items-center space-x-2 w-1/4 justify-end">
         <button onClick={toggleMute} className="text-gray-400 hover:text-white transition-colors">
           {isMuted || volume === 0 ? <VolumeX size={20} /> : <Volume2 size={20} />}

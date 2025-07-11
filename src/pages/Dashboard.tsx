@@ -168,7 +168,7 @@ const Dashboard: React.FC = () => {
   const { currentSong } = useSelector((state: RootState) => state.player);
 
   useEffect(() => {
-    // Load sample songs on component mount
+    // Initialize songs data
     dispatch(setLoading(true));
     setTimeout(() => {
       dispatch(setSongs(sampleSongs));
@@ -177,7 +177,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col">
-      {/* Dynamic Background */}
+      {/* Song artwork background */}
       {currentSong && (
         <div 
           className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-20 transition-all duration-1000 ease-in-out"
@@ -196,7 +196,7 @@ const Dashboard: React.FC = () => {
           <TopBar />
           
           <main className="flex-1 overflow-y-auto p-6 relative">
-            {/* Gradient overlay for better text readability */}
+            {/* Content overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
             
             <div className="max-w-6xl mx-auto">
@@ -212,14 +212,14 @@ const Dashboard: React.FC = () => {
               </div>
 
               <div className="bg-gray-900 bg-opacity-60 backdrop-blur-md rounded-lg p-6 shadow-2xl border border-gray-700/50">
-                <h2 className="text-2xl font-bold text-white mb-6">Trending Bollywood Hits</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">Popular Songs</h2>
                 <SongList />
               </div>
             </div>
           </main>
         </div>
         
-        {/* Now Playing Sidebar - only show when song is playing */}
+        {/* Now playing sidebar */}
         {currentSong && <NowPlayingSidebar />}
       </div>
 
