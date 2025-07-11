@@ -37,7 +37,7 @@ const TopBar: React.FC = () => {
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2 bg-black bg-opacity-80 rounded-full px-4 py-2 shadow-lg">
           <User size={20} className="text-white" />
-          <span className="text-white font-medium">Rahul Kumar</span>
+          <span className="text-white font-medium">Parveen</span>
         </div>
       </div>
     </div>
