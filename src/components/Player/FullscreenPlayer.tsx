@@ -81,8 +81,8 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
         </button>
         
         <div className="text-center">
-          <p className="text-gray-300 text-sm">PLAYING FROM PLAYLIST</p>
-          <p className="text-white font-medium">Recently Added</p>
+          <p className="text-gray-300 text-sm">PLAYLIST SE CHAL RAHA HAI</p>
+          <p className="text-white font-medium">Trending Bollywood Hits</p>
         </div>
         
         <button className="w-10 h-10 bg-black bg-opacity-50 rounded-full flex items-center justify-center text-white hover:bg-opacity-70 transition-colors">

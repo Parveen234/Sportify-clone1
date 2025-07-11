@@ -14,7 +14,7 @@ const NowPlayingSidebar: React.FC = () => {
       <div className="p-6 border-b border-gray-700/30">
         <div className="flex items-center space-x-2 mb-4">
           <Music size={20} className="text-green-400" />
-          <span className="text-sm font-medium text-gray-300">Now Playing</span>
+          <span className="text-sm font-medium text-gray-300">Abhi Chal Raha Hai</span>
         </div>
       </div>
 
@@ -60,9 +60,9 @@ const NowPlayingSidebar: React.FC = () => {
       {/* Queue Section */}
       <div className="flex-1 px-6 pb-6">
         <div className="border-t border-gray-700/30 pt-4">
-          <h4 className="text-sm font-medium text-gray-300 mb-3">Next in queue</h4>
+          <h4 className="text-sm font-medium text-gray-300 mb-3">Agle gaane</h4>
           <div className="space-y-2 text-sm text-gray-400">
-            <p>Queue will appear here when available</p>
+            <p>Agle gaane yahan dikhenge</p>
           </div>
         </div>
       </div>

@@ -4,11 +4,13 @@ import { Home, Search, Library, Plus, Heart } from 'lucide-react';
 const Sidebar: React.FC = () => {
   // Sample playlists
   const samplePlaylists = [
-    { id: '1', name: 'My Playlist #1' },
-    { id: '2', name: 'Chill Vibes' },
-    { id: '3', name: 'Workout Mix' },
-    { id: '4', name: 'Road Trip Songs' },
-    { id: '5', name: 'Study Music' },
+    { id: '1', name: 'Meri Pasandida' },
+    { id: '2', name: 'Romantic Hits' },
+    { id: '3', name: 'Gym Ke Liye' },
+    { id: '4', name: 'Long Drive Songs' },
+    { id: '5', name: 'Sufi Collection' },
+    { id: '6', name: '90s Ke Superhit' },
+    { id: '7', name: 'Party Mix' },
   ];
 
   return (
@@ -17,7 +19,7 @@ const Sidebar: React.FC = () => {
       <div className="p-6">
         <div className="flex items-center space-x-2">
           <img src="/sportifyy.png" alt="Spotify" className="w-8 h-8" />
-          <span className="text-xl font-bold">Spotify</span>
+          <span className="text-xl font-bold">MusicHub</span>
         </div>
       </div>
 
@@ -25,15 +27,15 @@ const Sidebar: React.FC = () => {
       <nav className="px-6 space-y-4">
         <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
           <Home size={24} />
-          <span className="font-medium">Home</span>
+          <span className="font-medium">Ghar</span>
         </a>
         <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
           <Search size={24} />
-          <span className="font-medium">Search</span>
+          <span className="font-medium">Khojiye</span>
         </a>
         <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
           <Library size={24} />
-          <span className="font-medium">Your Library</span>
+          <span className="font-medium">Aapki Library</span>
         </a>
       </nav>
 
@@ -41,11 +43,11 @@ const Sidebar: React.FC = () => {
         <div className="border-t border-gray-800 pt-4">
           <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors">
             <Plus size={24} />
-            <span className="font-medium">Create Playlist</span>
+            <span className="font-medium">Playlist Banayiye</span>
           </a>
           <a href="#" className="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors mt-4">
             <Heart size={24} />
-            <span className="font-medium">Liked Songs</span>
+            <span className="font-medium">Pasandida Gaane</span>
           </a>
         </div>
       </div>
