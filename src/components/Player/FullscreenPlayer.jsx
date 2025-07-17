@@ -13,7 +13,6 @@ import {
   Heart,
   MoreHorizontal
 } from 'lucide-react';
-import { RootState } from '../../store';
 import { 
   togglePlayPause, 
   nextSong, 
@@ -21,15 +20,10 @@ import {
   setVolume
 } from '../../store/slices/playerSlice';
 
-interface FullscreenPlayerProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) => {
+const FullscreenPlayer = ({ isOpen, onClose }) => {
   const dispatch = useDispatch();
   const { currentSong, isPlaying, volume, currentTime, duration } = useSelector(
-    (state: RootState) => state.player
+    (state) => state.player
   );
 
   const handlePlayPause = () => {
@@ -44,12 +38,12 @@ const FullscreenPlayer: React.FC<FullscreenPlayerProps> = ({ isOpen, onClose }) 
     dispatch(nextSong());
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     dispatch(setVolume(newVolume));
   };
 
-  const formatTime = (time: number) => {
+  const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;

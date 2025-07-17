@@ -12,7 +12,7 @@ export const useAuth = () => {
       if (user) {
         dispatch(setUser({
           uid: user.uid,
-          email: user.email!,
+          email: user.email,
           displayName: user.displayName || undefined,
         }));
       } else {

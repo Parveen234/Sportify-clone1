@@ -1,7 +1,7 @@
 import React from 'react';
 import { Home, Search, Library, Plus, Heart } from 'lucide-react';
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
   // User playlists
   const samplePlaylists = [
     { id: '1', name: 'Meri Pasandida' },

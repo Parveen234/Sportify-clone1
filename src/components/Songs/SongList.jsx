@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
 import SongCard from './SongCard';
 
-const SongList: React.FC = () => {
-  const { songs, loading } = useSelector((state: RootState) => state.songs);
+const SongList = () => {
+  const { songs, loading } = useSelector((state) => state.songs);
 
   if (loading) {
     return (

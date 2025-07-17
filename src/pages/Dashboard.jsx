@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store';
 import { setSongs, setLoading } from '../store/slices/songsSlice';
 import Sidebar from '../components/Layout/Sidebar';
 import TopBar from '../components/Layout/TopBar';
 import SongList from '../components/Songs/SongList';
 import MusicPlayer from '../components/Player/MusicPlayer';
 import NowPlayingSidebar from '../components/Layout/NowPlayingSidebar';
-import { Song } from '../types';
 
 // Sample songs data
-const sampleSongs: Song[] = [
+const sampleSongs = [
   {
     id: '1',
     title: 'Tum Hi Ho',
@@ -163,9 +161,9 @@ const sampleSongs: Song[] = [
   },
 ];
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const dispatch = useDispatch();
-  const { currentSong } = useSelector((state: RootState) => state.player);
+  const { currentSong } = useSelector((state) => state.player);
 
   useEffect(() => {
     // Initialize songs data

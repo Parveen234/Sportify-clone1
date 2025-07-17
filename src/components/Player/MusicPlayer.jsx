@@ -11,7 +11,6 @@ import {
   Repeat,
   Maximize2
 } from 'lucide-react';
-import { RootState } from '../../store';
 import { 
   togglePlayPause, 
   nextSong, 
@@ -23,12 +22,12 @@ import {
 } from '../../store/slices/playerSlice';
 import FullscreenPlayer from './FullscreenPlayer';
 
-const MusicPlayer: React.FC = () => {
+const MusicPlayer = () => {
   const dispatch = useDispatch();
   const { currentSong, isPlaying, volume, currentTime, duration } = useSelector(
-    (state: RootState) => state.player
+    (state) => state.player
   );
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const audioRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -91,7 +90,7 @@ const MusicPlayer: React.FC = () => {
     dispatch(nextSong());
   };
 
-  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSeek = (e) => {
     const audio = audioRef.current;
     if (audio) {
       const newTime = parseFloat(e.target.value);
@@ -100,7 +99,7 @@ const MusicPlayer: React.FC = () => {
     }
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = (e) => {
     const newVolume = parseFloat(e.target.value);
     dispatch(setVolume(newVolume));
     setIsMuted(false);
@@ -110,7 +109,7 @@ const MusicPlayer: React.FC = () => {
     setIsMuted(!isMuted);
   };
 
-  const formatTime = (time: number) => {
+  const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;

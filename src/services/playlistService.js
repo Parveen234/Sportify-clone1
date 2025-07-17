@@ -10,14 +10,13 @@ import {
   Timestamp 
 } from 'firebase/firestore';
 import { db } from '../config/firebase';
-import { Playlist } from '../types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const createPlaylist = async (
-  name: string,
-  description: string,
-  userId: string
-): Promise<Playlist> => {
+  name,
+  description,
+  userId
+) => {
   const playlistId = uuidv4();
   
   const playlistData = {
@@ -37,7 +36,7 @@ export const createPlaylist = async (
   };
 };
 
-export const getUserPlaylists = async (userId: string): Promise<Playlist[]> => {
+export const getUserPlaylists = async (userId) => {
   const q = query(
     collection(db, 'playlists'), 
     where('createdBy', '==', userId),
@@ -48,10 +47,10 @@ export const getUserPlaylists = async (userId: string): Promise<Playlist[]> => {
   return querySnapshot.docs.map(doc => ({
     ...doc.data(),
     createdAt: doc.data().createdAt.toDate(),
-  })) as Playlist[];
+  }));
 };
 
-export const addSongToPlaylist = async (playlistId: string, songId: string) => {
+export const addSongToPlaylist = async (playlistId, songId) => {
   const playlistRef = doc(db, 'playlists', playlistId);
   // Note: In a real app, you'd want to get the current songs array and append to it
   // This is a simplified version

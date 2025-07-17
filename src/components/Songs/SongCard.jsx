@@ -1,19 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Play, Pause, MoreHorizontal } from 'lucide-react';
-import { Song } from '../../types';
 import { setCurrentSong, setQueue, togglePlayPause } from '../../store/slices/playerSlice';
-import { RootState } from '../../store';
 
-interface SongCardProps {
-  song: Song;
-  index: number;
-  songs: Song[];
-}
-
-const SongCard: React.FC<SongCardProps> = ({ song, index, songs }) => {
+const SongCard = ({ song, index, songs }) => {
   const dispatch = useDispatch();
-  const { currentSong, isPlaying } = useSelector((state: RootState) => state.player);
+  const { currentSong, isPlaying } = useSelector((state) => state.player);
   
   const isCurrentSong = currentSong?.id === song.id;
 
@@ -26,7 +18,7 @@ const SongCard: React.FC<SongCardProps> = ({ song, index, songs }) => {
     }
   };
 
-  const formatDuration = (duration: number) => {
+  const formatDuration = (duration) => {
     const minutes = Math.floor(duration / 60);
     const seconds = Math.floor(duration % 60);
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;

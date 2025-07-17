@@ -1,13 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Song } from '../../types';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface SongsState {
-  songs: Song[];
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: SongsState = {
+const initialState = {
   songs: [],
   loading: false,
   error: null,
@@ -17,18 +10,18 @@ const songsSlice = createSlice({
   name: 'songs',
   initialState,
   reducers: {
-    setSongs: (state, action: PayloadAction<Song[]>) => {
+    setSongs: (state, action) => {
       state.songs = action.payload;
       state.loading = false;
       state.error = null;
     },
-    addSong: (state, action: PayloadAction<Song>) => {
+    addSong: (state, action) => {
       state.songs.unshift(action.payload);
     },
-    setLoading: (state, action: PayloadAction<boolean>) => {
+    setLoading: (state, action) => {
       state.loading = action.payload;
     },
-    setError: (state, action: PayloadAction<string>) => {
+    setError: (state, action) => {
       state.error = action.payload;
       state.loading = false;
     },

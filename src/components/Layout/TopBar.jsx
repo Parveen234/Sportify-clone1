@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ChevronLeft, ChevronRight, User } from 'lucide-react';
-import { RootState } from '../../store';
 
-const TopBar: React.FC = () => {
-  const { currentSong } = useSelector((state: RootState) => state.player);
+const TopBar = () => {
+  const { currentSong } = useSelector((state) => state.player);
 
   return (
     <div className="h-16 bg-black bg-opacity-70 backdrop-blur-md flex items-center justify-between px-6 border-b border-gray-700/30">

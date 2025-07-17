@@ -12,16 +12,15 @@ import {
   getDownloadURL 
 } from 'firebase/storage';
 import { db, storage } from '../config/firebase';
-import { Song } from '../types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const uploadSong = async (
-  audioFile: File,
-  thumbnailFile: File,
-  title: string,
-  artist: string,
-  userId: string
-): Promise<Song> => {
+  audioFile,
+  thumbnailFile,
+  title,
+  artist,
+  userId
+) => {
   const songId = uuidv4();
   
   // Upload audio file
@@ -54,12 +53,12 @@ export const uploadSong = async (
   };
 };
 
-export const getSongs = async (): Promise<Song[]> => {
+export const getSongs = async () => {
   const q = query(collection(db, 'songs'), orderBy('createdAt', 'desc'));
   const querySnapshot = await getDocs(q);
   
   return querySnapshot.docs.map(doc => ({
     ...doc.data(),
     createdAt: doc.data().createdAt.toMillis(),
-  })) as Song[];
+  }));
 };

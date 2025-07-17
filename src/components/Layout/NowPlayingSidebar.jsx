@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Heart, MoreHorizontal, Music } from 'lucide-react';
-import { RootState } from '../../store';
 
-const NowPlayingSidebar: React.FC = () => {
-  const { currentSong, isPlaying } = useSelector((state: RootState) => state.player);
+const NowPlayingSidebar = () => {
+  const { currentSong, isPlaying } = useSelector((state) => state.player);
 
   if (!currentSong) return null;
 

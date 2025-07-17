@@ -1,7 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Song, PlayerState } from '../../types';
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState: PlayerState = {
+const initialState = {
   currentSong: null,
   isPlaying: false,
   queue: [],
@@ -15,20 +14,20 @@ const playerSlice = createSlice({
   name: 'player',
   initialState,
   reducers: {
-    setCurrentSong: (state, action: PayloadAction<Song>) => {
+    setCurrentSong: (state, action) => {
       state.currentSong = action.payload;
       state.isPlaying = true;
     },
     togglePlayPause: (state) => {
       state.isPlaying = !state.isPlaying;
     },
-    setIsPlaying: (state, action: PayloadAction<boolean>) => {
+    setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
-    setQueue: (state, action: PayloadAction<Song[]>) => {
+    setQueue: (state, action) => {
       state.queue = action.payload;
     },
-    setCurrentIndex: (state, action: PayloadAction<number>) => {
+    setCurrentIndex: (state, action) => {
       state.currentIndex = action.payload;
       if (state.queue[action.payload]) {
         state.currentSong = state.queue[action.payload];
@@ -48,13 +47,13 @@ const playerSlice = createSlice({
         state.isPlaying = true;
       }
     },
-    setVolume: (state, action: PayloadAction<number>) => {
+    setVolume: (state, action) => {
       state.volume = action.payload;
     },
-    setCurrentTime: (state, action: PayloadAction<number>) => {
+    setCurrentTime: (state, action) => {
       state.currentTime = action.payload;
     },
-    setDuration: (state, action: PayloadAction<number>) => {
+    setDuration: (state, action) => {
       state.duration = action.payload;
     },
   },
